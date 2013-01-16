@@ -13,7 +13,9 @@ $recentErrors = new-object System.Collections.ArrayList
 $recentErrors.AddRange($application)
 $recentErrors.AddRange($system)
 
-$outputPath = "recentErrors.html"
+$basePath = "C:\dev\GitHub\PowerShell\scripts\"
+$outputPath = $basePath + "recentErrors.html"
+$cssPath = $basePath + "get-errors.css"
 
-$recentErrors | convertto-html -CssUri "get-errors.css" -title "Windows Error Logs" -property EntryType, TimeGenerated, Message, Source, UserName | set-content $outputPath
+$recentErrors | convertto-html -CssUri $cssPath -title "Windows Error Logs" -property EntryType, TimeGenerated, Message, Source, UserName | set-content $outputPath
 ii $outputPath
