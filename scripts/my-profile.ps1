@@ -4,6 +4,9 @@ $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
 # Load posh-git example profile
 . 'C:\dev\GitHub\posh-git\profile.example.ps1'
 
+New-PSDrive su filesystem 'C:\dev\serviceu'
+New-PSDrive gh filesystem 'C:\dev\GitHub'
+
 import-module psget
 import-module find-string
 import-module default-ignores
