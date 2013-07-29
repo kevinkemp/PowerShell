@@ -9,9 +9,23 @@ $global:GitPromptSettings.EnableFileStatus = $false #speed up posh-git
 New-PSDrive su filesystem 'C:\dev\serviceu'
 New-PSDrive gh filesystem 'C:\dev\GitHub'
 
-import-module psget
-import-module find-string
-import-module default-ignores
-import-module psconfig
+function ensurePsGetExists {
+    if ((Get-Module PsGet) -eq $null) {
+        # install psget
+        (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+    }
+}
+
+function installModule($moduleName) {
+    if ((Get-Module $moduleName) -eq $null) {
+        ensurePsGetExists
+
+        Install-Module $moduleName
+    }
+}
+
+installModule find-string
+installModule default-ignores
+installModule psconfig
 
 Set-Alias subl sublime_text
