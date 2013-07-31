@@ -9,6 +9,8 @@ $global:GitPromptSettings.EnableFileStatus = $false #speed up posh-git
 New-PSDrive su filesystem 'C:\dev\serviceu'
 New-PSDrive gh filesystem 'C:\dev\GitHub'
 
+function mklink { cmd /c mklink $args }
+
 function ensurePsGetExists {
     if ((Get-Module PsGet) -eq $null) {
         # install psget
