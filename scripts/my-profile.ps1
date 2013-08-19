@@ -10,6 +10,21 @@ New-PSDrive su filesystem 'C:\dev\serviceu'
 New-PSDrive gh filesystem 'C:\dev\GitHub'
 New-PSDrive mod fileSystem ~/Documents\WindowsPowerShell/Modules
 
+# Add ability to remember last directory to cd
+Remove-Item Alias:cd
+function cd {
+    if ($args[0] -eq '-') {
+        $pwd=$OLDPWD;
+    } else {
+        $pwd=$args[0];
+    }
+    $tmp=pwd;   
+    if ($pwd) {
+        Set-Location $pwd;
+    }
+    Set-Variable -Name OLDPWD -Value $tmp -Scope global;
+}
+
 function mklink { cmd /c mklink $args }
 
 function ensurePsGetExists {
