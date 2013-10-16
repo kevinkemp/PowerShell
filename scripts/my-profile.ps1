@@ -7,6 +7,7 @@ $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
 $global:GitPromptSettings.EnableFileStatus = $false #speed up posh-git
 
 New-PSDrive su filesystem 'C:\dev\serviceu'
+New-PSDrive f1 filesystem 'C:\dev\f1'
 New-PSDrive gh filesystem 'C:\dev\GitHub'
 New-PSDrive mod fileSystem ~/Documents\WindowsPowerShell/Modules
 
