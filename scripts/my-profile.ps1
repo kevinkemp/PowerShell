@@ -36,7 +36,7 @@ function ensurePsGetExists {
 
 function installModule($moduleName) {
     if ((Get-Module $moduleName) -eq $null) {
-        ensurePsGetExists
+        # ensurePsGetExists
 
         Install-Module $moduleName
     }
