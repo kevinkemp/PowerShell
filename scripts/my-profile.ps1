@@ -6,7 +6,6 @@ $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
 
 $global:GitPromptSettings.EnableFileStatus = $false #speed up posh-git
 
-New-PSDrive su filesystem 'C:\dev\serviceu'
 New-PSDrive mod fileSystem ~/Documents\WindowsPowerShell/Modules
 
 # Add ability to remember last directory to cd
