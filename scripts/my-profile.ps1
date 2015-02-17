@@ -43,5 +43,3 @@ function installModule($moduleName) {
 installModule find-string
 installModule default-ignores
 installModule psconfig
-
-Set-Alias subl sublime_text
