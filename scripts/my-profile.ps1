@@ -34,7 +34,7 @@ function ensurePsGetExists {
 
 function installModule($moduleName) {
     if ((Get-Module $moduleName) -eq $null) {
-        # ensurePsGetExists
+        ensurePsGetExists
 
         Install-Module $moduleName
     }
@@ -42,4 +42,4 @@ function installModule($moduleName) {
 
 installModule find-string
 installModule default-ignores
-installModule psconfig
+installModule psconfig	
