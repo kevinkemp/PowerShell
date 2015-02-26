@@ -1,12 +1,14 @@
+$env:HOME="C:\Users\kkemp"
+$env:HOMEDRIVE="C:"
 $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
-. (Resolve-Path ~/Documents/WindowsPowershell/ssh-agent-utils.ps1)
+. (Resolve-Path C:/Users/kkemp/Documents/WindowsPowershell/ssh-agent-utils.ps1)
 
 # Load posh-git example profile
 . 'C:\dev\posh-git\profile.example.ps1'
 
 $global:GitPromptSettings.EnableFileStatus = $false #speed up posh-git
 
-New-PSDrive mod fileSystem ~/Documents\WindowsPowerShell/Modules
+New-PSDrive mod fileSystem C:/Users/kkemp/Documents\WindowsPowerShell/Modules
 
 # Add ability to remember last directory to cd
 Remove-Item Alias:cd
