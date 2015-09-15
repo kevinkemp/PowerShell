@@ -8,7 +8,7 @@ $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
 
 $global:GitPromptSettings.EnableFileStatus = $false #speed up posh-git
 
-New-PSDrive mod fileSystem C:/Users/kkemp/Documents\WindowsPowerShell/Modules
+New-PSDrive mod fileSystem C:/Users/kkemp/Documents/WindowsPowerShell/Modules
 
 # Add ability to remember last directory to cd
 Remove-Item Alias:cd
@@ -45,3 +45,5 @@ function installModule($moduleName) {
 installModule find-string
 installModule default-ignores
 installModule psconfig	
+
+set-location "C:\dev\tfs\Cms.Classic\Application\Cms.Next\Development\DEV\CmsClassic.Next\CmsClassic.Next.Web"
