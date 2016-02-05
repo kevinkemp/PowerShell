@@ -46,4 +46,4 @@ installModule find-string
 installModule default-ignores
 installModule psconfig	
 
-set-location "C:\dev\tfs\Cms.Classic\Application\Cms.Next\Development\DEV\CmsClassic.Next\CmsClassic.Next.Web"
+set-location "C:\dev\tfs\Genesis\Next\Development\SprintWork\CmsClassic.Next\CmsClassic.Next.Web"
